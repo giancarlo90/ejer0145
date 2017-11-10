@@ -56,4 +56,16 @@ public class FechaYHora
         return fechaADevolver;
     }
     
+        /**
+     * Metodo para fijar una fecha
+     */
+    public void fijarFechaYHora ( int nuevoDia, int nuevoMes, int nuevoAno, int nuevaHora, int nuevosMinutos)
+    {
+        dia = nuevoDia;
+        mes = nuevoMes;
+        ano = nuevoAno;
+        hora = nuevaHora;
+        minutos = nuevosMinutos;
+    }
+    
 }
