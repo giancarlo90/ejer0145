@@ -25,7 +25,7 @@ public class FechaYHora
         hora = 0;
         minutos = 0;
     }
-    
+
     /**
      * Metodo para obtener la fecha y la hora
      */
@@ -55,8 +55,45 @@ public class FechaYHora
         fechaADevolver = parte1 + "-" + parte2 + "-" + parte3 + " " + parte4 + ":" + parte5;
         return fechaADevolver;
     }
-    
-        /**
+
+    /**
+     * Metodo para avanzar la fecha y la hora
+     */
+    public void avanzarFechaYHora()
+    {
+        if((minutos == 59) && (hora == 23)){
+            if (dia == 30 & mes == 12){
+
+                dia = 1;
+                mes = 1;
+                ano = ano + 1;
+            }
+            else {
+                if (dia < 30) {
+                    dia = dia + 1;
+                }
+                else {
+                    if (dia == 30){
+                        dia = 1;
+                        mes = mes + 1;
+                    }
+                }
+            }
+            hora = 0;
+            minutos = 0;
+        }
+        else {
+            if (minutos == 59){
+                hora = hora + 1;
+                minutos = 0;
+            }
+            else{
+                minutos = minutos + 1;
+            }
+        }
+    }
+
+    /**
      * Metodo para fijar una fecha
      */
     public void fijarFechaYHora ( int nuevoDia, int nuevoMes, int nuevoAno, int nuevaHora, int nuevosMinutos)
@@ -67,5 +104,5 @@ public class FechaYHora
         hora = nuevaHora;
         minutos = nuevosMinutos;
     }
-    
+
 }
